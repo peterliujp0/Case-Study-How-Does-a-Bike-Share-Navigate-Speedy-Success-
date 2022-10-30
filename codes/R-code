@@ -1,7 +1,5 @@
 ### Divvy_Exercise_Full_Year_Analysis ###
 
-# This analysis is based on the Divvy case study "'Sophisticated, Clear, and Polished’: Divvy and Data Visualization" written by Kevin Hartman (found here: https://artscience.blog/home/divvy-dataviz-case-study). The purpose of this script is to consolidate downloaded Divvy data into a single dataframe and then conduct simple analysis to help answer the key question: “In what ways do members and casual riders use Divvy bikes differently?”
-
 # # # # # # # # # # # # # # # # # # # # # # # 
 # Install required packages
 # tidyverse for data import and wrangling
@@ -215,10 +213,10 @@ all_trips_v2 %>%
 #=================================================
 # STEP 5: EXPORT SUMMARY FILE FOR FURTHER ANALYSIS
 #=================================================
-# Create a csv file that we will visualize in Excel, Tableau, or my presentation software
-# N.B.: This file location is for a Mac. If you are working on a PC, change the file location accordingly (most likely "C:\Users\YOUR_USERNAME\Desktop\...") to export the data. You can read more here: https://datatofish.com/export-dataframe-to-csv-in-r/
+# Create a csv file that we will visualize in Excel, Tableau
+
 counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
 write.csv(counts, file = 'C:/Users/Peter/Desktop/Cyclistics_Project_Data/avg_ride_length.csv')
 
-#You're done! Congratulations!
+#done!
 
